@@ -1,5 +1,8 @@
 import pandas as pd
 import numpy as np
+#Graphs
+import matplotlib.pyplot as plt
+
 import joblib
 import streamlit as st
 
@@ -65,9 +68,7 @@ v = st.slider(f'Select variance = {v}', 1,4, step = 1)
 
 arr = np.random.normal(m, v, size=1000)
 
-#Graphs
-import matplotlib.pyplot as plt
-import numpy as np
+
 fig, ax = plt.subplots()
 ax.hist(arr, bins=100)
 ax.set_ylim([0, 50])
@@ -77,14 +78,37 @@ st.pyplot(fig)
 
 
 
+st.markdown('## Soru 5')
+review=st.text_input("Enter the Answer ")
+st.markdown(f'Your answer is {review}')
+
+if st.button("Predict Sentiment"):
+  st.success(f'Your answer is {review}')  
 
 
 
 
 
 
+st.latex(r''' e^{i\pi} + 1 = 0 ''')
+
+st.code("""
+st.markdown('## Soru 3')
+st.success('Successful')
+st.markdown('`This is a markdown`')
+st.info("This is an information")
+st.warning('This is a warning')
+""")
 
 
+st.file_uploader('File uploader')
+
+
+st.markdown('# Daha fazlasi icin')
+st.markdown('Adres: https://share.streamlit.io/daniellewisdl/streamlit-cheat-sheet/app.py')
+
+
+st.markdown('https://docs.streamlit.io/en/stable/tutorial/aws_s3.html')
 
 
 
